@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rnkings/sincerelyYours.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "rose koenings",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rnkings/sincerelyYours/issues"
   },
