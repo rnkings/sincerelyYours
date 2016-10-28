@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rnkings/sincerelyYours/issues"
   },
-  "homepage": "https://github.com/rnkings/sincerelyYours#readme"
+  "homepage": "https://github.com/rnkings/sincerelyYours#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2"
+  }
 }

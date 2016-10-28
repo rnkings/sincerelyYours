@@ -1,0 +1,60 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.sincerelyYoursLogo{
+	content: url("../img/sincerelyYoursLogo.png");
+/*		background-size: cover;*/
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width:350px;
+	text-align: center;
+	height: 30px;
+	display:block;
+	margin-bottom: 50px;
+}
+
+.height{
+	height:250px;
+}
+
+body{
+	background-color: #e8f4ad;
+}
+
+.templateIcon{
+	content: url("../img/template.png");
+/*		background-size: cover;*/
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width:100px;
+	text-align: center;
+	height: 150px;
+	display:block;
+}
+
+.letterIcon{
+	width:50px;
+	margin-bottom: 2%;
+	margin-left:32px;
+
+}
+.containerBottom{
+	padding-bottom: -100px;
+}
+
+
+
+
+
