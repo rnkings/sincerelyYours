@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/rnkings/sincerelyYours#readme",
   "dependencies": {
-    "body-parser": "^1.15.2"
+    "body-parser": "^1.15.2",
+    "pg": "^6.1.0",
+    "pug": "^0.1.0"
   }
 }

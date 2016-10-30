@@ -27,6 +27,7 @@
 
 .height{
 	height:250px;
+	margin-bottom: 0px;
 }
 
 body{
@@ -54,6 +55,89 @@ body{
 	padding-bottom: -100px;
 }
 
+.mailIcon{
+	content: url("../img/mail.png");
+/*		background-size: cover;*/
+/*	background-repeat: no-repeat;
+	margin: 0 auto;*/
+	width:300px;
+/*	text-align: center;*/
+	height: 150px;
+/*	display:block;*/
+}
+
+textarea { 
+/*    padding: 1px; 
+    border: solid 1px #5c8593; */
+    font-size: 10pt; 
+    color:#42484d; 
+    background-color:#ffffff;
+/*    width: 650px;*/
+    height: 350px;
+    margin: 0 auto;
+	text-align: center;
+	outline:none;
+
+	border: 3px solid #cccccc;
+/*	padding: 5px;*/
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+
+}
+
+#content{
+  width: 54%;
+  float: left;
+  margin-right: 3%;
+}
+
+#sidebar-left{
+  width: 20%;
+  float: left;
+  margin-right: 3%;
+}
+
+#sidebar-right{
+  width: 20%;
+  float: left;
+}
+.sidebar-nav{display: none;}
+
+/*First Template button start*/
+.firstTemplateSubmitButton {
+   border-top: 1px solid #472a63;
+   background: #322773;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e9c9a), to(#322773));
+   background: -webkit-linear-gradient(top, #3e9c9a, #322773);
+   background: -moz-linear-gradient(top, #3e9c9a, #322773);
+   background: -ms-linear-gradient(top, #3e9c9a, #322773);
+   background: -o-linear-gradient(top, #3e9c9a, #322773);
+   padding: 11px 22px;
+   -webkit-border-radius: 27px;
+   -moz-border-radius: 27px;
+   border-radius: 27px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.firstTemplateSubmitButton:hover {
+   border-top-color: #322773;
+   background: #322773;
+   color: #ccc;
+   }
+.firstTemplateSubmitButton:active {
+   border-top-color: #4b4770;
+   background: #4b4770;
+   }
+
+/*First Template button stop*/
 
 
 

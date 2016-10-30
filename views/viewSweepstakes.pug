@@ -1,0 +1,12 @@
+html
+	head
+	body
+		p.
+			JSON
+		p!= JSON.stringify(data)
+
+		h1.
+			Hello #{data.params.firstname} #{data.params.lastname},
+		p.
+			We have a brand new sweepstake you might be interested in. Consider entering for our #{data.params.sweepstake} sweepstake!
+		a(href=data.params.link) Apply Now!
