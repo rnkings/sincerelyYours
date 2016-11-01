@@ -137,6 +137,9 @@ textarea {
    background: #4b4770;
    }
 
+#templateResult {
+  display: none;
+}
 /*First Template button stop*/
 
 
