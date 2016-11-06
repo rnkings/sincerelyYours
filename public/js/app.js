@@ -8,6 +8,7 @@ $('#sweepstakeForm').on('submit', function (e) {
   $.ajax({
     url: '/submit/sweepstakes',
     method: 'POST',
+    //serialize
     data: $(this).serialize(),
     success: function (response) {
       if (response.status !== 'success') {
@@ -19,7 +20,9 @@ $('#sweepstakeForm').on('submit', function (e) {
     }
   });
 });
-//when template form gets submitted run it 
+
+//When a sweepstakes template is requested, send the ID in and return the data
+//Then display it
 $('#templateForm').on('submit', function (e) {
   //don't submit normally
   e.preventDefault();
@@ -41,28 +44,48 @@ $('#templateForm').on('submit', function (e) {
   })
 });
 
+// TEMPLATE 2
 
+//When the coupon template is submitted, create the tempate in the DB
+//and return the ID
+$('#couponForm').on('submit', function (e) {
+  e.preventDefault();
+  $.ajax({
+    url: '/submit/coupon',
+    method: 'POST',
+    data: $(this).serialize(),
+    success: function (response) {
+      if (response.status !== 'success') {
+        throw new Error('Failed API call.');
+      }
 
+      console.log(response);
+      $('#result').html('<a href="/viewTemplate2.html">Check out the preview! ID was' + response.id + '</a>');
+    }
+  });
+});
 
-//  function fetchData(){
-//    $.ajax({
-//      url: "/api/data",
-//      method: "GET",
-//      success: function(data){
-//        // might want to pretty print things here :)
-//        document.getElementById("main").innerHTML = "<p>" + data + "</p>";
-//      }
-//    });
-//  }
+//When a coupon template is requested, send the ID in and return the data
+//Then display it
+$('#templateCouponForm').on('submit', function (e) {
+  //don't submit normally
+  e.preventDefault();
+  //ajax call to the url /view and passing in a query selector /route?param=value
+  $.ajax({
+    url: '/view?id=' + $('#templateId').val(),
+    method: 'GET',
+    //now this gets the response back and it's going to get the response passed.
+    success: function (response) {
+      var params = response.params;
+      var $container = $('#templateResult');
 
-// function sendData(x = {}){
-//   $.ajax({
-//     url: "/api/data",
-//     method: "POST",
-//     data: x,
-//     success: function(output){
-//       // might want to pretty print things here :)
-//       document.getElementById("main").innerHTML = "<p>" + output + "</p>";
-//     }
-//   });
-// }
+      console.log("HERE");
+
+      var html = '<h1>' + params.firstname + ' ' + params.lastname + '</h1>';
+      html+= '<h2>' + params.coupon + ' ' + params.link + '</h2>';
+
+      $container.html(html);
+      $container.show();
+    }
+  })
+});
