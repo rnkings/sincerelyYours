@@ -18,7 +18,7 @@ $('#sweepstakeForm').on('submit', function (e) {
       }
 
       console.log(response);
-      $('#result').html('<a href="/viewTemplate.html">Check out the preview! ID was' + response.id + '</a>');
+      $('#result').html('<a href="/viewTemplate.html">' + '<br>' + 'Check out the preview! ID was' + " " + response.id + '</a>');
     }
   });
 });
@@ -37,8 +37,8 @@ $('#templateForm').on('submit', function (e) {
       var params = response.params
       var $container = $('#templateResult');
 
-      var html = '<h1>' + params.firstname + ' ' + params.lastname + '</h1>';
-      html+= '<h2>' + params.sweepstake + ' ' + params.link + '</h2>';
+      var html = '<h5>' + 'Hello! ' + params.firstname + ' ' + params.lastname + ',' + '<br>' + '</h5>';
+      html+= '<h5>' + 'Here are your sweepstakes for the week: ' +params.sweepstake + ' ' + '<br>' + '<br>' + 'Follow this link for more information: ' + params.link + '</h5>';
 
       $container.html(html);
       $container.show();
@@ -62,7 +62,7 @@ $('#couponForm').on('submit', function (e) {
       }
 
       console.log(response);
-      $('#result').html('<a href="/viewTemplate2.html">Check out the preview! ID was' + response.id + '</a>');
+      $('#result').html('<a href="/viewTemplate2.html">' + '<br>' + 'Check out the preview! ID was' + " " + response.id + '</a>');
     }
   });
 });
@@ -83,8 +83,8 @@ $('#templateCouponForm').on('submit', function (e) {
 
       console.log("HERE");
 
-      var html = '<h1>' + params.firstname + ' ' + params.lastname + '</h1>';
-      html+= '<h2>' + params.coupon + ' ' + params.link + '</h2>';
+      var html = '<h5>' + 'Howdy ' + params.firstname + ' ' + params.lastname + ',' + '</h5>';
+      html+= '<h5>' + '<br>' + 'Here is your coupon for this week: ' + params.coupon + ' ' + '<br>' + '<br>' + 'Follow this link if you want to know more: ' + params.link + '</h5>';
 
       $container.html(html);
       $container.show();
@@ -108,7 +108,7 @@ $('#eventsForm').on('submit', function (e) {
       }
 
       console.log(response);
-      $('#result').html('<a href="/viewTemplate3.html">Check out the preview! ID was' + response.id + '</a>');
+      $('#result').html('<a href="/viewTemplate3.html">' + '<br>' + 'Check out the preview! ID was' + " " + response.id + '</a>');
     }
   });
 });
@@ -129,8 +129,8 @@ $('#templateEventsForm').on('submit', function (e) {
 
       console.log("HERE");
 
-      var html = '<h1>' + params.firstname + ' ' + params.lastname + '</h1>';
-      html+= '<h2>' + params.events + ' ' + params.link + '</h2>';
+      var html = '<h5>' + 'Good day ' + params.firstname + ' ' + params.lastname + ',' + '</h5>';
+      html+= '<h5>' + '<br>' + 'Here is an event near you this week: ' + params.events + ' ' + '<br>' + '<br>' + 'Here is a link if you want more information on this event: ' + params.link + '</h5>';
 
       $container.html(html);
       $container.show();
