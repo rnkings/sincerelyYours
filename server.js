@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 //back end
 
+// *****************TEMPLATE 1 SWEEPSTAKES (back end) *******************************
+
 app.get('/view', function (req, res) {
   var id = req.query.id;
 //select the template with the id that matches this id
@@ -85,7 +87,7 @@ app.post('/submit/sweepstakes', function (req, res) {
   });
 });
 
-// NEXT TEMPLATE
+// *****************TEMPLATE 2 COUPONS (back end) *******************************
 
 app.post('/submit/coupon', function (req, res) {
   var params = {
@@ -131,28 +133,64 @@ app.post('/submit/coupon', function (req, res) {
   });
 });
 
+
+
+// *****************TEMPLATE 3 EVENTS (back end) *******************************
+
+app.post('/submit/events', function (req, res) {
+  var params = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    events: req.body.events,
+    link: req.body.link
+  };
+
+  var boundParams = {
+    userId: 1,
+    templateName: 'events',
+    //turns params into JSON encoded JavaScript Object Notation
+    //keys and values to send data back and forth
+    //turns into a string that can be parsed out into javascript
+    //as keys and values
+    params: JSON.stringify(params)
+  };
+//database query, takes in two arguments which are a query and boundParams which is the object which is mapped to the query (maps the object and passes it into the query (aka lining up parameters))
+  console.log('making query');
+  db.query(
+    //return template ID so we know what it auto incremented to so we can use it
+    'INSERT INTO template ("userID", "templateName", "params") VALUES (${userId}, ${templateName}, ${params}) RETURNING "templateID"', 
+    //boundParams in an object on lin 102
+    boundParams
+    //then runs promise and once query is done then we get our data
+    //then will run if success happens
+  ).then(function (data) {
+      console.log(data);
+      //grab newly inserted id
+      var id = data[0].templateID;
+      //and we send it back to the front end as part of an object
+      res.send({
+        //the status and id are part of that object
+        status: 'success',
+        id: id
+      });
+      //if something goes wrong we will take care of it once here.
+      //This is the inserting which is the post
+  }).catch(function (error) {
+    console.log(error);
+    res.status(500).send("Error with the database insert. " + JSON.stringify(error));
+  });
+});
+
  app.listen(3000, function () {
    console.log('See this website at localhost:3000');
  });
 
-// //EXAMPLE PROMISE CODE
-// // var promise = new Promise(function (resolve, reject) {
-// //   return resolve(true);
-// // });
 
-// // promise.then(function (result) {
-// //   console.log("THEN CHAIN");
-// //   console.log(result);
-// //   return result;
-// // }).then(function (result2) {
-// //   console.log(result2);
-// //   return false;
-// // }).then(function (result3) {
-// //   console.log(result3);
-// //   if (!result3) {
-// //     throw new Error('result3 was false');
-// //   }
-// // }).catch(function (error) {
-// //   console.error("ERROR!!!!");
-// //   console.log(error);
-// // });
+
+
+
+
+
+
+
+

@@ -29,59 +29,38 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <div class="sincerelyYoursLogo height"></div>
-      <div class="row center">
-        <h5 class="header col s12 light center">Pick a modern design that suits you, courtesy of Sincerely Yours</h5>
-      </div>
       <br><br>
  
     </div>
   </div>
 
 
-  <div class="container">
+  <div class="container center">
 
     <div class="section containerBottom">
 
       <section id="main"></section>
 
-      <!--   Icon Section   -->
-      <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="templateIcon">flash_on</i></h2>
-            <h5 class="center">Try Template 1</h5>
-
-            <p class="light">Try out our first email template builder. It's pretty darn awesome.  You'll never want to use anything else.  Welcome to the Sincerely Yours family.</p>
-            <div class="row center">
-            <a href="template1.html" id="download-button" class="btn-large waves-effect waves-light light-green">Get Started</a>
-             </div>
+            <h2 class="center light-blue-text"><i class="mailIcon">flash_on</i></h2>
+            <form id="eventsForm">
+              First Name:<br>
+              <input type="text" name="firstname" value="Rose">
+              <br>
+              Last Name:<br>
+              <input type="text" name="lastname" value="Koenings">
+              Event Name:<br>
+              <input type="text" name="events" value="Event stuff">
+              <br>
+              Link:<br>
+              <input type="text" name="link" value="https://facebook.com">
+              <button type="submit" id="template3-submit" class="btn-large waves-effect waves-light light-green">Get Started</a>
+              </div>
+            </form>
+            <div class="row center" id="result"></div>
           </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="templateIcon">group</i></h2>
-            <h5 class="center">Try Template 2</h5>
-
-            <p class="light">Try out our first email template builder. It's pretty darn awesome.  You'll never want to use anything else.  Welcome to the Sincerely Yours family.</p>
-            <div class="row center">
-            <a href="template2.html" id="download-button" class="btn-large waves-effect waves-light light-green">Get Started</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="templateIcon">settings</i></h2>
-            <h5 class="center">Try Template 3</h5>
-
-            <p class="light">Try out our second email template builder. It's pretty darn awesome.  You'll never want to use anything else.  Welcome to the Sincerely Yours family.</p>
-          </div>
-          <div class="row center">
-          <a href="template3.html" id="download-button" class="btn-large waves-effect waves-light light-green">Get Started</a>
-          </div>
-        </div>
-      </div>
 
     </div>
     <br><br>
@@ -97,8 +76,6 @@
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
           <p class="grey-text text-lighten-4">Try out our third email template builder. It's pretty darn awesome.  You'll never want to use anything else.  Welcome to the Sincerely Yours family.</p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
@@ -134,12 +111,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/app.js"></script>
-  <script>
-  $(document).ready(function(){
-    var data = {firstName: "Nick"};
-    sendData(data);
-  });
-  </script>
   </body>
 </html>
 
