@@ -6,7 +6,6 @@
 //   ************ TEMPLATE 1 SWEEPSTAKE  (front end)*************************
 
 $('#sweepstakeForm').on('submit', function (e) {
-  e.preventDefault();
   $.ajax({
     url: '/submit/sweepstakes',
     method: 'POST',
@@ -26,8 +25,6 @@ $('#sweepstakeForm').on('submit', function (e) {
 //When a sweepstakes template is requested, send the ID in and return the data
 //Then display it
 $('#templateForm').on('submit', function (e) {
-  //don't submit normally
-  e.preventDefault();
   //ajax call to the url /view and passing in a query selector /route?param=value
   $.ajax({
     url: '/view?id=' + $('#templateId').val(),

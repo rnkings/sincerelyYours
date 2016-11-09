@@ -4,7 +4,6 @@ var express = require("express");
 var bodyParser = require('body-parser');
 //Require postgres client
 var pgp = require("pg-promise")();
-console.log('connecting to DB.');
 var db = pgp(require("./db.json"));
 var app = express();
 
@@ -46,9 +45,7 @@ app.post('/submit/sweepstakes', function (req, res) {
     sweepstake: req.body.sweepstake,
     link: req.body.link
   };
-  console.log("------");
-  console.log(req.body.firstname);
-  console.log("------");
+
 
   var boundParams = {
     userId: 1,
@@ -61,7 +58,7 @@ app.post('/submit/sweepstakes', function (req, res) {
   };
 //database query, takes in two arguments which are a query and boundParams which is the object which is mapped 
 //to the query (maps the object and passes it into the query (aka lining up parameters))
-  console.log('making query');
+
   db.query(
     //return template ID so we know what it auto incremented to so we can use it
     'INSERT INTO template ("userID", "templateName", "params") VALUES (${userId}, ${templateName}, ${params}) RETURNING "templateID"', 
