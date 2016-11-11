@@ -6,6 +6,7 @@
 //   ************ TEMPLATE 1 SWEEPSTAKE  (front end)*************************
 
 $('#sweepstakeForm').on('submit', function (e) {
+  e.preventDefault();
   $.ajax({
     url: '/submit/sweepstakes',
     method: 'POST',
